@@ -1,0 +1,89 @@
+{
+  "name": "q-applet-lock-leds",
+  "displayName": "Lock LEDs",
+  "version": "1.0.0",
+  "description": "Changes the key colors based on state of the lock key",
+  "longDescription": "Monitor your keyboard lock leds states ",
+  "officialProductName": "",
+  "appUrl": "",
+  "publisher": "denk-mal",
+  "isSingleton": false,
+  "videoUrl": "",
+  "icon": "assets/icon.png",
+  "image": "assets/q-applet-lock-leds-image.png",
+  "authorName": "denk-mal",
+  "authorUrl": "https://github.com/denk-mal",
+  "issuesUrl": "https://github.com/denk-mal/daskeyboard-applet--lock-leds/issues",
+  "homePageUrl": "https://github.com/denk-mal/daskeyboard-applet--lock-leds",
+  "developerRepoUrl": "https://github.com/denk-mal/daskeyboard-applet--lock-leds",
+  "licenseUrl": "https://github.com/denk-mal/daskeyboard-applet--lock-leds/blob/master/LICENSE",
+  "changelogUrl": "CHANGELOG.md",
+  "readMeUrl": "README.md",
+  "readMeEndUserUrl": "README_ENDUSER.md",
+  "license": "MIT",
+  "dependencies": {
+    "daskeyboard-applet": "^2.11.4",
+    "request-promise": "latest"
+  },
+  "engines": {
+    "das-keyboard-q": "3.2.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Test?  What test?  No tests here\""
+  },
+  "qConfig": {
+    "geometry": {
+      "width": 1,
+      "height": 1
+    },
+    "applet": {
+      "defaults": {}
+    },
+    "questions": [
+      {
+        "key": "lockKey",
+        "label": "Enter lock key name",
+        "help": "This is the key lock that will be checked.",
+        "required": true,
+        "order": 1,
+        "controlType": "dropdown",
+        "options": [
+          {
+            "key": "1",
+            "value": "Caps Lock"
+          }, {
+            "key": "2",
+            "value": "Num Lock"
+          }, {
+            "key": "4",
+            "value": "Scroll Lock"
+          }
+        ]
+      },
+      {
+        "key": "onColor",
+        "label": "Key lock on",
+        "help": "If key lock is on color will be displayed.",
+        "required": false,
+        "order": 2,
+        "value": "#0000FF",
+        "controlType": "color"
+      },
+      {
+        "key": "offColor",
+        "label": "Key lock off",
+        "help": "If key lock is off color will be displayed.",
+        "required": false,
+        "order": 3,
+        "value": "#000000",
+        "controlType": "color"
+      }
+    ],
+    "requirements": {
+      "applet": {
+        "lockKey": "string"
+      }
+    }
+  }
+}
